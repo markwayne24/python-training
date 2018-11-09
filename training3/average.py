@@ -6,7 +6,7 @@ def get_ave(lst):
         total = 0
         for x in lst:
             total += x
-        return round(total / len(lst))
+        return round(total / len(lst), 2)
 
 
 with open('crawl_result.csv') as csv_file:
@@ -17,12 +17,14 @@ with open('crawl_result.csv') as csv_file:
     macro = []
     celebrity = []
     below_100 = []
+    engagements = []
 
     for row in csv_reader:
         if line_count == 0:
             pass
         else:
             followers = int(row[2])
+            avg_engagements = float(row[6])
 
             if followers > 100 < 200:
                 nano.append(followers)
@@ -35,9 +37,13 @@ with open('crawl_result.csv') as csv_file:
             else:
                 below_100.append(followers)
 
+            if avg_engagements > 0:
+                engagements.append(avg_engagements)
+
         line_count += 1
 
-    print(f'Total number = {line_count}.')
+    print(f'Total number = {line_count}')
+    print(f'Average = average:{get_ave(engagements)}  total: {len(engagements)}')
     print(f'Nano =  average:{get_ave(nano)}, total: {len(nano)}')
     print(f'Micro = average:{get_ave(micro)}  total: {len(micro)}')
     print(f'Macro = average:{get_ave(macro)}  total: {len(macro)}')
