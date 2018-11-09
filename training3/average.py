@@ -43,7 +43,7 @@ with open('crawl_result.csv') as csv_file:
         line_count += 1
 
     print(f'Total number = {line_count}')
-    print(f'Average = average:{get_ave(engagements)}  total: {len(engagements)}')
+    print(f'Average engagement = average:{get_ave(engagements)}  total: {len(engagements)}')
     print(f'Nano =  average:{get_ave(nano)}, total: {len(nano)}')
     print(f'Micro = average:{get_ave(micro)}  total: {len(micro)}')
     print(f'Macro = average:{get_ave(macro)}  total: {len(macro)}')
