@@ -37,8 +37,8 @@ with open('crawl_result.csv') as csv_file:
         line_count += 1
 
     print(f'Total number = {line_count}.')
-    print('Nano = ' + str(get_ave(nano)))
-    print('Micro = ' + str(get_ave(micro)))
-    print('Macro = ' + str(get_ave(macro)))
-    print('Celebrity = ' + str(get_ave(celebrity)))
-    print('Below 100 = ' + str(get_ave(below_100)))
+    print(f'Nano = {get_ave(nano)}')
+    print(f'Micro = {get_ave(micro)}')
+    print(f'Macro = {get_ave(macro)}')
+    print(f'Celebrity = {get_ave(celebrity)}')
+    print(f'Below 100 = {get_ave(below_100)}')
